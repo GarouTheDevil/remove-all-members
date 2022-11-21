@@ -20,17 +20,15 @@ token = "123456abcdefghijklmnopqrstzw"
 app = Client("remove", app_id, app_key, bot_token=token)
 
 
-TEXT_STARTED = 'הרובוט מתחיל בהסרת {} משתמשים מהקבוצה 🥾'
-TEXT_FINISH = 'הרובוט סיים להסיר {} משתמשים מהקבוצה'
-TEXT_ERROR = 'משהו נכשל. בדוק אם קיבלתי הרשאות ניהול מספיקות, או שלח זה למפתח:\n {}'
+TEXT_STARTED = 'The robot starts by removing {} users from the group'
+TEXT_FINISH = 'The robot has finished removing {} users from the group'
+TEXT_ERROR = 'Something failed. Check if I have received sufficient management permissions, or send it to the developer:\n {}'
 TEXT_PRIVATE = '''
-היי, אני רובוט שיעזור לכם להסיר את כל המשתמשים מהקבוצה שלכם 🥾
+Hey, I'm a robot that will help you remove all users from your group
 
-הוסיפו אותי לקבוצה, ואל תשכחו לתת לי ניהול מתאים כדי שאוכל להסיר אותם.
-הוספתם? מעולה. עכשיו תשלחו בקבוצה /kick ואני אתחיל בעבודה שלי.
+Add me to the group, and don't forget to give me proper management so I can remove them. Did you add them? Excellent. Now תשלחו בגעצון /kick and I am אתחיל in my work.
 
-
-הרובוט נוצר ע"י [מקליד תמיד](tg://user?id=789248230). ניתן לפנות לכל בקשה או הערה, ואשתדל לעזור בשמחה.    
+הروبوت نصر ع"ي [מכליד טידים] (tg://user?id=789248230). You can contact me for any request or comment, and I will try to help.
 '''
 
 status_admin = ["administrator", "creator"]
@@ -67,7 +65,7 @@ def service(c,m):
 @app.on_message(filters.private)
 def start(c,m):
     m.reply(TEXT_PRIVATE,disable_web_page_preview=True,reply_markup=InlineKeyboardMarkup(
-          [[InlineKeyboardButton(text="לערוץ שלי 🎀",
+          [[InlineKeyboardButton(text="My channel 🎀",
                        url="https://t.me/m100achuzyou")],
            [InlineKeyboardButton(text="עדכוני רובוטים",
                        url="https://t.me/M100achuzBots")]
